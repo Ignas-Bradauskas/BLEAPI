@@ -1,9 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.2.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.9.2" />
+    <PackageReference Include="Nancy" Version="2.0.0" />
+    <PackageReference Include="Nancy.Owin" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="1.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="1.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Owin" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.0.2" />
+  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
@@ -13,6 +26,10 @@
       <HintPath>..\..\..\..\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd</HintPath>
       <IsWinMDFile>true</IsWinMDFile>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
 
 </Project>

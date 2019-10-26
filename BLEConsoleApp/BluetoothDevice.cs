@@ -2,7 +2,7 @@
 
 namespace BLEConsoleApp
 {
-    class BluetoothDevice
+    public class BluetoothDevice
     {
         public short SignalStrength { get; set; }
 

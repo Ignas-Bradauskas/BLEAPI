@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.Devices.Bluetooth.Advertisement;
 
 namespace BLEConsoleApp
@@ -12,7 +10,6 @@ namespace BLEConsoleApp
         private static readonly object LockToken = new object();
         private static readonly BluetoothLEAdvertisementWatcher Watcher = new BluetoothLEAdvertisementWatcher();
 
-
         public static void Initialize()
         {
             Watcher.ScanningMode = BluetoothLEScanningMode.Active;
@@ -22,7 +19,7 @@ namespace BLEConsoleApp
 
         public static Dictionary<ulong, BluetoothDevice> Poll()
         {
-            var a = new Dictionary<ulong, BluetoothDevice>();
+            var result = new Dictionary<ulong, BluetoothDevice>();
             lock (LockToken)
             {
                 var temp = new Dictionary<ulong, BluetoothDevice>();
@@ -30,9 +27,9 @@ namespace BLEConsoleApp
                 {
                     temp.Add(bluetoothDevice.Key, bluetoothDevice.Value);
                 }
-                a = temp;
+                result = temp;
             }
-            return a;
+            return result;
         }
 
         private static void DeviceFound(BluetoothLEAdvertisementWatcher sender, BluetoothLEAdvertisementReceivedEventArgs args)
